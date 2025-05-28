@@ -1,0 +1,46 @@
+.bigButton{
+    -fx-background-color: #B27F7F; 
+    -fx-text-fill: #660000;
+    -fx-border-color: #E0CCCC;
+}
+.bigButton:hover{
+    -fx-background-color: #660000; 
+    -fx-text-fill: #B27F7F;
+    -fx-border-color: #E0CCCC;
+}
+.notSelected{
+    -fx-background-color: #F9F4EF; 
+    -fx-text-fill: #660000;
+}
+.selected{
+    -fx-background-color: #660000; 
+    -fx-text-fill: #F9F4EF;
+}
+.bigButtonInverted{
+    -fx-background-color: #660000; 
+    -fx-text-fill: #B27F7F;
+    -fx-border-color: #E0CCCC;
+}
+.bigButtonInverted:hover{
+    -fx-background-color: #B27F7F; 
+    -fx-text-fill: #660000;
+    -fx-border-color: #E0CCCC;
+}
+/* .bigButton{
+    -fx-text-fill: #112d4e;
+    -fx-border-color: #f5f5f5;
+}
+.bigButton:hover{
+    -fx-text-fill: #5481a4;
+    -fx-border-color: #f5f5f5;
+}
+.loginButton{
+    -fx-background-color: #c6d3e3;
+    -fx-text-fill: #112d4e;
+    -fx-border-color: #c6d3e3;
+}
+.loginButton:hover{
+    -fx-background-color: #112d4e;
+    -fx-text-fill: #c6d3e3;
+    -fx-border-color: #112d4e;
+} */

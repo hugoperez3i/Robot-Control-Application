@@ -1,0 +1,2107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ClientController">
+   <children>
+      <AnchorPane prefHeight="800.0" prefWidth="1200.0">
+         <children>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #F9F4EF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+               <children>
+                  <Pane fx:id="paneSelectMovementMenu" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #c4c1bf;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="699.0" fitWidth="546.0" layoutX="340.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/fullrobot.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="844.0" layoutY="501.0" mnemonicParsing="false" onAction="#swapToMoveLeftHand" prefHeight="73.0" prefWidth="226.0" style="-fx-border-color: E0CCCC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButton" stylesheets="@buttonStyle.css" text="Left Hand" textFill="#660000">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="899.0" layoutY="267.0" mnemonicParsing="false" onAction="#swapToMoveLeftArm" prefHeight="73.0" prefWidth="226.0" style="-fx-border-color: E0CCCC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButton" stylesheets="@buttonStyle.css" text="Left Arm" textFill="#660000">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="715.0" layoutY="22.0" mnemonicParsing="false" onAction="#swapToMoveHead" prefHeight="73.0" prefWidth="226.0" style="-fx-border-color: E0CCCC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButton" stylesheets="@buttonStyle.css" text="Head" textFill="#660000">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="169.0" layoutY="267.0" mnemonicParsing="false" onAction="#swapToMoveRightArm" prefHeight="73.0" prefWidth="226.0" style="-fx-border-color: E0CCCC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButton" stylesheets="@buttonStyle.css" text="Right Arm" textFill="#660000">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="96.0" layoutY="501.0" mnemonicParsing="false" onAction="#swapToMoveRightHand" prefHeight="73.0" prefWidth="226.0" style="-fx-border-color: E0CCCC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButton" stylesheets="@buttonStyle.css" text="Right Hand" textFill="#660000">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="418.0" layoutY="623.0" mnemonicParsing="false" onAction="#swapToMoveTorso" prefHeight="73.0" prefWidth="226.0" style="-fx-border-color: E0CCCC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButton" stylesheets="@buttonStyle.css" text="Torso" textFill="#660000">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneMovementHead" disable="true" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle fill="#e0cccc" height="114.0" layoutY="609.0" stroke="#66000000" strokeType="INSIDE" width="1200.0" />
+                        <Group layoutX="122.0" layoutY="91.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Head tilt left" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_h_tilt_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showHeadTMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_h_tilt_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_h_tilt_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_h_tilt_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_h_tilt_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_h_tilt_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_h_tilt_L_selected" disable="true" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_h_tilt_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_h_tilt_L_selected" disable="true" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_h_tilt_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="431.0" layoutY="361.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Head rotation" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_h_rot" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_h_rot" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_h_rot" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_h_rot" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_h_rot" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_h_rot" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_h_rot_selected" disable="true" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_h_rot" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_h_rot_selected" disable="true" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_h_rot" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="721.0" layoutY="91.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Head tilt right" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_h_tilt_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showHeadTMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_h_tilt_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_h_tilt_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_h_tilt_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_h_tilt_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_h_tilt_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_h_tilt_R_selected" disable="true" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_h_tilt_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_h_tilt_R_selected" disable="true" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_h_tilt_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Separator layoutY="605.0" prefHeight="6.0" prefWidth="1200.0" style="-fx-background-color: E0CCCC; -fx-border-color: E0CCCC;" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneMovementTorso" disable="true" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle fill="#e0cccc" height="114.0" layoutY="609.0" stroke="#66000000" strokeType="INSIDE" width="1200.0" />
+                        <Group layoutX="124.0" layoutY="95.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Left arm circumduction" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_t_rot_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_t_rot_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_t_rot_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_t_rot_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_t_rot_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_t_rot_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_t_rot_L_selected" disable="true" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_t_rot_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_t_rot_L_selected" disable="true" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_t_rot_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="723.0" layoutY="95.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Right arm circumduction" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_t_rot_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_t_rot_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_t_rot_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_t_rot_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_t_rot_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_t_rot_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_t_rot_R_selected" disable="true" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_t_rot_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_t_rot_R_selected" disable="true" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_t_rot_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="162.0" layoutY="348.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Torso tilt left" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_t_tilt_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_t_tilt_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_t_tilt_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_t_tilt_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_t_tilt_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_t_tilt_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_t_tilt_L_selected" disable="true" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_t_tilt_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_t_tilt_L_selected" disable="true" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_t_tilt_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="683.0" layoutY="348.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Torso tilt right" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_t_tilt_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_t_tilt_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_t_tilt_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_t_tilt_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_t_tilt_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_t_tilt_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_t_tilt_R_selected" disable="true" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_t_tilt_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_t_tilt_R_selected" disable="true" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_t_tilt_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000" visible="false">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Separator layoutY="605.0" prefHeight="6.0" prefWidth="1200.0" style="-fx-background-color: E0CCCC; -fx-border-color: E0CCCC;" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneMovementLArm" disable="true" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle fill="#e0cccc" height="114.0" layoutY="609.0" stroke="#66000000" strokeType="INSIDE" width="1200.0" />
+                        <Group layoutX="54.0" layoutY="95.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="arm flex" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_bicep_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_bicep_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_bicep_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_bicep_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_bicep_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_bicep_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_bicep_L_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_bicep_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_bicep_L_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_bicep_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="54.0" layoutY="248.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Forearm rotation" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_forerot_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_forerot_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_forerot_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_forerot_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_forerot_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_forerot_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_forerot_L_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_forerot_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_forerot_L_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_forerot_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="721.0" layoutY="95.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="shoulder flex" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_sldr_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_sldr_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_sldr_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_sldr_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_sldr_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_sldr_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_sldr_L_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_sldr_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_sldr_L_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_sldr_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="680.0" layoutY="332.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Arm rotation" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_armrot_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_armrot_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_armrot_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_armrot_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_armrot_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_armrot_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_armrot_L_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_armrot_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_armrot_L_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_armrot_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Separator layoutY="605.0" prefHeight="6.0" prefWidth="1200.0" style="-fx-background-color: E0CCCC; -fx-border-color: E0CCCC;" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneMovementLHand" disable="true" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle fill="#e0cccc" height="114.0" layoutY="609.0" stroke="#66000000" strokeType="INSIDE" width="1200.0" />
+                        <Group layoutX="122.0" layoutY="91.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumb flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_thumb_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_thumb_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_thumb_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_thumb_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_thumb_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_thumb_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_thumb_L_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_thumb_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_thumb_L_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_thumb_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="122.0" layoutY="244.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_middle_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_middle_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_middle_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_middle_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_middle_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_middle_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_middle_L_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_middle_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_middle_L_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_middle_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="721.0" layoutY="91.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Index Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_index_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_index_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_index_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_index_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_index_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_index_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_index_L_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_index_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_index_L_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_index_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="721.0" layoutY="244.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Ring Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_ring_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_ring_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_ring_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_ring_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_ring_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_ring_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_ring_L_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_ring_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_ring_L_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_ring_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="122.0" layoutY="404.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Little flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_little_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_little_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_little_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_little_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_little_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_little_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_little_L_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_little_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_little_L_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_little_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="721.0" layoutY="404.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumb abduction" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_palm_L" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_palm_L" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_palm_L" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_palm_L" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_palm_L" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_palm_L" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_palm_L_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_palm_L" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_palm_L_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_palm_L" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Separator layoutY="605.0" prefHeight="6.0" prefWidth="1200.0" style="-fx-background-color: E0CCCC; -fx-border-color: E0CCCC;" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneMovementRArm" disable="true" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle fill="#e0cccc" height="114.0" layoutY="609.0" stroke="#66000000" strokeType="INSIDE" width="1200.0" />
+                        <Group layoutX="54.0" layoutY="95.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="arm flex" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_bicep_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_bicep_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_bicep_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_bicep_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_bicep_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_bicep_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_bicep_R_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_bicep_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_bicep_R_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_bicep_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="54.0" layoutY="248.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Forearm rotation" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_forerot_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_forerot_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_forerot_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_forerot_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_forerot_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_forerot_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_forerot_R_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_forerot_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_forerot_R_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_forerot_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="721.0" layoutY="95.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="shoulder flex" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_sldr_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_sldr_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_sldr_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_sldr_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_sldr_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_sldr_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_sldr_R_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_sldr_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_sldr_R_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_sldr_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="680.0" layoutY="332.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Arm rotation" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_armrot_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_armrot_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_armrot_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_armrot_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_armrot_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_armrot_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_armrot_R_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_armrot_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_armrot_R_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_armrot_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Separator layoutY="605.0" prefHeight="6.0" prefWidth="1200.0" style="-fx-background-color: E0CCCC; -fx-border-color: E0CCCC;" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneMovementRHand" disable="true" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle fill="#e0cccc" height="114.0" layoutY="609.0" stroke="#66000000" strokeType="INSIDE" width="1200.0" />
+                        <Group layoutX="122.0" layoutY="91.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumb flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_thumb_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_thumb_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_thumb_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_thumb_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_thumb_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_thumb_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_thumb_R_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_thumb_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_thumb_R_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_thumb_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="122.0" layoutY="244.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_middle_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_middle_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_middle_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_middle_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_middle_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_middle_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_middle_R_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_middle_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_middle_R_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_middle_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="721.0" layoutY="91.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Index Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_index_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_index_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_index_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_index_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_index_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_index_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_index_R_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_index_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_index_R_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_index_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="721.0" layoutY="244.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Ring Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_ring_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_ring_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_ring_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_ring_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_ring_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_ring_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_ring_R_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_ring_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_ring_R_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_ring_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="122.0" layoutY="404.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Little flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_Rittle_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_Rittle_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_Rittle_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_Rittle_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_Rittle_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_Rittle_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_Rittle_R_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_Rittle_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_Rittle_R_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_Rittle_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Group layoutX="721.0" layoutY="404.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
+                              <Text fontSmoothingType="LCD" layoutX="12.0" layoutY="62.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Position:" wrappingWidth="133.34765625">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumb abduction" textAlignment="CENTER" wrappingWidth="353.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textCP_palm_R" fontSmoothingType="LCD" layoutX="60.0" layoutY="94.576171875" strokeType="OUTSIDE" strokeWidth="0.0" text="127º">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="223.0" layoutY="61.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust by: ">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Text>
+                              <Button fx:id="buttonPlus_palm_R" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_palm_R" styleClass="notSelected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_palm_R" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_palm_R" prefWidth="23.0" styleClass="notSelected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Spinner fx:id="spinner_palm_R" editable="true" layoutX="234.0" layoutY="73.0" prefHeight="25.0" prefWidth="103.0" />
+                              <Button fx:id="buttonPlus_palm_R_selected" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToPositive_palm_R" styleClass="selected" stylesheets="@buttonStyle.css" text="+" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="buttonMinus_palm_R_selected" layoutX="206.0" layoutY="75.0" mnemonicParsing="false" onAction="#changeToNegative_palm_R" prefWidth="23.0" styleClass="selected" stylesheets="@buttonStyle.css" text="-" textFill="#660000">
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Group>
+                        <Separator layoutY="605.0" prefHeight="6.0" prefWidth="1200.0" style="-fx-background-color: E0CCCC; -fx-border-color: E0CCCC;" />
+                     </children>
+                  </Pane>
+                  <Group fx:id="groupExecution" disable="true" layoutX="43.0" layoutY="640.7391357421875" visible="false">
+                     <children>
+                        <ProgressIndicator fx:id="pIndicatorExecution" layoutY="1.2608642578125" prefHeight="41.0" prefWidth="46.0" style="-fx-accent: #660000;" />
+                        <Text fx:id="textExectuion" fill="#660000" fontSmoothingType="LCD" layoutX="58.0" layoutY="17.4913330078125" strokeType="OUTSIDE" strokeWidth="0.0" text="The robot is currently executing a movement..." wrappingWidth="214.6810302734375">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Group>
+                  <Button fx:id="buttonExecuteMovement" disable="true" layoutX="44.0" layoutY="240.0" mnemonicParsing="false" onAction="#executeMovement" prefHeight="73.0" prefWidth="226.0" style="-fx-border-color: E0CCCC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButton" stylesheets="@buttonStyle.css" text="Execute Movements" textFill="#660000" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="487.0" AnchorPane.rightAnchor="487.0" AnchorPane.topAnchor="629.3333333333333">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Pane fx:id="paneInfoMSG" disable="true" prefHeight="571.0" prefWidth="1027.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle fill="#b0808000" height="723.0" layoutX="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1200.0" />
+                        <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#b08080" height="521.0" layoutX="86.0" layoutY="45.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1028.0" />
+                        <Text fx:id="textInfoMSG" fontSmoothingType="LCD" layoutX="246.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="error tittle" wrappingWidth="827.4725875854492">
+                           <font>
+                              <Font name="Arial" size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textInfoDescription" fontSmoothingType="LCD" layoutX="106.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="err description" textAlignment="JUSTIFY" wrappingWidth="990.7502136230469">
+                           <font>
+                              <Font name="Arial" size="24.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="buttonInfoMSG" cancelButton="true" layoutX="560.0" layoutY="508.0" mnemonicParsing="false" onAction="#closeInfoMSG" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButtonInverted" stylesheets="@buttonStyle.css" text="OKAY" textFill="#b27f7f">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fx:id="imgErr" fitHeight="83.0" fitWidth="103.0" layoutX="131.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/errorIcon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgWarn" disable="true" fitHeight="83.0" fitWidth="103.0" layoutX="131.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../img/warnIcon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneTutorial" disable="true" layoutX="10.0" layoutY="10.0" prefHeight="571.0" prefWidth="1027.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle fill="#b0808000" height="723.0" layoutX="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1200.0" />
+                        <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#b08080" height="653.0" layoutX="56.0" layoutY="18.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1088.0" />
+                        <Text fx:id="textTutorialT" fontSmoothingType="LCD" layoutX="246.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tutorial: User guide for the control panel" wrappingWidth="827.4725875854492">
+                           <font>
+                              <Font name="Arial" size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textTutorial" fontSmoothingType="LCD" layoutX="106.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In order to execute movement orders, first you'll need to click on the robot part that you want to control blah blah..." textAlignment="JUSTIFY" wrappingWidth="990.7502136230469">
+                           <font>
+                              <Font name="Arial" size="24.0" />
+                           </font>
+                        </Text>
+                        <ImageView blendMode="COLOR_BURN" fitHeight="83.0" fitWidth="103.0" layoutX="127.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/infoIcon.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="buttonTutorial" cancelButton="true" layoutX="526.0" layoutY="605.0" mnemonicParsing="false" onAction="#hideTutorial" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButtonInverted" stylesheets="@buttonStyle.css" text="Close Tutorial" textFill="#b27f7f">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneMovementE" disable="true" layoutX="20.0" layoutY="20.0" prefHeight="571.0" prefWidth="1027.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle fill="#b0808000" height="723.0" layoutX="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1200.0" />
+                        <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#c4c1bf" height="653.0" layoutX="56.0" layoutY="18.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1088.0" />
+                        <Text fx:id="textMovementET" fontSmoothingType="LCD" layoutX="246.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tutorial: User guide for the control panel" wrappingWidth="827.4725875854492">
+                           <font>
+                              <Font name="Arial" size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textMovementE" fontSmoothingType="LCD" layoutX="106.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In order to execute movement orders, first you'll need to click on the robot part that you want to control blah blah..." textAlignment="JUSTIFY" wrappingWidth="990.7502136230469">
+                           <font>
+                              <Font name="Arial" size="24.0" />
+                           </font>
+                        </Text>
+                        <ImageView blendMode="COLOR_BURN" fitHeight="83.0" fitWidth="103.0" layoutX="127.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/infoIcon.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="buttonMovementE" cancelButton="true" layoutX="463.0" layoutY="622.0" mnemonicParsing="false" onAction="#hideMovementExp" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButton" stylesheets="@buttonStyle.css" text="Close Movement Explanation" textFill="#b27f7f">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fx:id="imgViewMov" blendMode="COLOR_BURN" fitHeight="268.0" fitWidth="742.0" layoutX="229.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneSendingMVOrders" disable="true" layoutX="10.0" layoutY="10.0" prefHeight="571.0" prefWidth="1027.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle fill="#b0808000" height="723.0" layoutX="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1200.0" />
+                        <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#b08080" height="478.0" layoutX="110.0" layoutY="78.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1004.0" />
+                        <Text fontSmoothingType="LCD" layoutX="125.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SENDING MOVEMENT ORDERS TO THE SERVER" textAlignment="CENTER" wrappingWidth="950.805908203125">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fontSmoothingType="LCD" layoutX="177.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please wait for server confirmation" textAlignment="CENTER" wrappingWidth="870.0835800170898">
+                           <font>
+                              <Font name="Arial" size="24.0" />
+                           </font>
+                        </Text>
+                        <Button cancelButton="true" disable="true" layoutX="557.0" layoutY="451.0" mnemonicParsing="false" onAction="#closeInfoMSG" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButtonInverted" stylesheets="@buttonStyle.css" text="OKAY" textFill="#b27f7f" visible="false">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ProgressBar blendMode="MULTIPLY" layoutX="236.0" layoutY="317.0" prefHeight="66.0" prefWidth="730.0" style="-fx-accent: #660000;" />
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="41.0" fitWidth="23.0" onMouseClicked="#syncClient" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="1171.6666666666667" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="693.6666666666666">
+                     <image>
+                        <Image url="@../img/refreshIcon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Text fx:id="textInvalidAction" fill="#940000" layoutX="314.0" layoutY="229.22998046875" stroke="#940000" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: SERVO POSITION EXCEEDS LIMITS" textAlignment="CENTER" visible="false" wrappingWidth="618.9999999999998" AnchorPane.leftAnchor="314.0" AnchorPane.rightAnchor="267.0000000000002" AnchorPane.topAnchor="206.0">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="25.0" />
+               </font>
+            </Text>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: E0CCCC;" AnchorPane.bottomAnchor="720.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="buttonBackToMVSelect" cancelButton="true" disable="true" layoutX="11.0" layoutY="5.0" mnemonicParsing="false" onAction="#backToMVSelect" prefHeight="73.0" prefWidth="226.0" style="-fx-border-color: E0CCCC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="bigButton" stylesheets="@buttonStyle.css" text="Back to Menu" textFill="#660000" visible="false">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#b27f7f" height="73.0" layoutX="340.0" layoutY="4.0" stroke="#660000" strokeType="INSIDE" width="500.0" />
+                  <Text fx:id="textInformation" fill="#660000" layoutX="340.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Robot Control Panel" textAlignment="CENTER" wrappingWidth="500.0000000000002">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="73.0" fitWidth="73.0" layoutX="1117.0" layoutY="5.0" onMouseClicked="#showTutorial" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="4.666666666666629" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="4.0">
+                     <image>
+                        <Image url="@../img/infoIcon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Separator prefWidth="200.0" style="-fx-background-color: E0CCCC; -fx-border-color: E0CCCC;" AnchorPane.bottomAnchor="717.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
