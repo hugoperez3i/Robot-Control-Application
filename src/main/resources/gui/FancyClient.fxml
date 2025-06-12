@@ -172,7 +172,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showHeadRotMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -288,7 +288,7 @@
                   <Pane fx:id="paneMovementTorso" disable="true" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Rectangle fill="#e0cccc" height="114.0" layoutY="609.0" stroke="#66000000" strokeType="INSIDE" width="1200.0" />
-                        <Group layoutX="124.0" layoutY="95.0">
+                        <Group layoutX="162.0" layoutY="95.0">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
@@ -312,7 +312,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showTorsoRMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -355,7 +355,7 @@
                               </Button>
                            </children>
                         </Group>
-                        <Group layoutX="723.0" layoutY="95.0">
+                        <Group layoutX="683.0" layoutY="95.0">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
@@ -379,7 +379,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showTorsoRMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -431,7 +431,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Torso tilt left" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Torso tilt left servo" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -446,7 +446,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showTorsoTMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -498,7 +498,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Torso tilt right" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Torso tilt right servo" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -513,7 +513,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showTorsoTMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -562,7 +562,7 @@
                   <Pane fx:id="paneMovementLArm" disable="true" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Rectangle fill="#e0cccc" height="114.0" layoutY="609.0" stroke="#66000000" strokeType="INSIDE" width="1200.0" />
-                        <Group layoutX="54.0" layoutY="95.0">
+                        <Group layoutX="137.0" layoutY="113.0">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
@@ -571,7 +571,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="arm flex" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Arm flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -586,7 +586,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showArmFMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -629,7 +629,7 @@
                               </Button>
                            </children>
                         </Group>
-                        <Group layoutX="54.0" layoutY="248.0">
+                        <Group layoutX="137.0" layoutY="332.0">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
@@ -653,7 +653,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showForearMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -696,7 +696,7 @@
                               </Button>
                            </children>
                         </Group>
-                        <Group layoutX="721.0" layoutY="95.0">
+                        <Group layoutX="680.0" layoutY="113.0">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
@@ -705,7 +705,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="shoulder flex" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Shoulder flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -720,7 +720,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showShoulderMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -787,7 +787,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showArmRMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -860,7 +860,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showFingerMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -912,7 +912,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -927,7 +927,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showFingerMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -979,7 +979,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Index Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Index finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -994,7 +994,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showFingerMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1046,7 +1046,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Ring Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Ring finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1061,7 +1061,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showFingerMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1113,7 +1113,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Little flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Little finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1128,7 +1128,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showFingerMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1195,7 +1195,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showFingerMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1244,7 +1244,7 @@
                   <Pane fx:id="paneMovementRArm" disable="true" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Rectangle fill="#e0cccc" height="114.0" layoutY="609.0" stroke="#66000000" strokeType="INSIDE" width="1200.0" />
-                        <Group layoutX="54.0" layoutY="95.0">
+                        <Group layoutX="114.0" layoutY="102.0">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
@@ -1253,7 +1253,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="arm flex" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Arm flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1268,7 +1268,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showArmFMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1311,7 +1311,7 @@
                               </Button>
                            </children>
                         </Group>
-                        <Group layoutX="54.0" layoutY="248.0">
+                        <Group layoutX="114.0" layoutY="332.0">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
@@ -1335,7 +1335,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showForearMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1378,7 +1378,7 @@
                               </Button>
                            </children>
                         </Group>
-                        <Group layoutX="721.0" layoutY="95.0">
+                        <Group layoutX="680.0" layoutY="102.0">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0cccc" height="135.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#660000" height="27.0" stroke="#660000" strokeType="INSIDE" width="353.0" />
@@ -1387,7 +1387,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="shoulder flex" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Shoulder flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1402,7 +1402,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showShoulderMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1469,7 +1469,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="308.0" layoutY="19.705078125" onMouseClicked="#showArmRMovTutorial" strokeType="OUTSIDE" strokeWidth="0.0" text="( ? )" textAlignment="CENTER" wrappingWidth="45.66668701171875">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1594,7 +1594,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1661,7 +1661,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Index Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Index finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1728,7 +1728,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Ring Finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Ring finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -1795,7 +1795,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Little flexion" textAlignment="CENTER" wrappingWidth="353.0">
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="1.0" layoutY="19.705078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Little finger flexion" textAlignment="CENTER" wrappingWidth="353.0">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -2031,7 +2031,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <ImageView fx:id="imgViewMov" blendMode="COLOR_BURN" fitHeight="268.0" fitWidth="742.0" layoutX="229.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imgViewMov" blendMode="COLOR_BURN" fitHeight="360.0" fitWidth="640.0" layoutX="281.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </Pane>
                   <Pane fx:id="paneSendingMVOrders" disable="true" layoutX="10.0" layoutY="10.0" prefHeight="571.0" prefWidth="1027.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

@@ -194,7 +194,7 @@ public class ClientController implements Initializable{
             buttonBackToMVSelect.setCancelButton(false);
             buttonBackToMVSelect.setDisable(true);
             buttonTutorial.setCancelButton(true);
-            //TODO - text
+
             if(currentScreen==0){
                 textTutorialT.setText(TextDescriptions.titleMainGuide);
                 textTutorial.setText(TextDescriptions.textMainGuide);
@@ -233,7 +233,6 @@ public class ClientController implements Initializable{
             buttonBackToMVSelect.setDisable(true);
             buttonMovementE.setCancelButton(true);
 
-            /* Update text - TODO:change video */
             textMovementET.setText(TextDescriptions.titleMov_Finger);
             textMovementE.setText(TextDescriptions.textMov_Finger);
             imgViewMov.setImage(new Image("/img/fingerMov.png"));
@@ -247,7 +246,6 @@ public class ClientController implements Initializable{
             buttonBackToMVSelect.setDisable(true);
             buttonMovementE.setCancelButton(true);
 
-            /* Update text - TODO:change video */
             textMovementET.setText(TextDescriptions.titleMov_Pam);
             textMovementE.setText(TextDescriptions.textMov_Pam);
             imgViewMov.setImage(new Image("/img/palmMov.png"));
@@ -261,7 +259,6 @@ public class ClientController implements Initializable{
             buttonBackToMVSelect.setDisable(true);
             buttonMovementE.setCancelButton(true);
 
-            /* Update text - TODO:change video */
             textMovementET.setText(TextDescriptions.titleMov_HeadT);
             textMovementE.setText(TextDescriptions.textMov_HeadT);
             imgViewMov.setImage(new Image("/img/headTiltMov.png"));
@@ -275,7 +272,6 @@ public class ClientController implements Initializable{
             buttonBackToMVSelect.setDisable(true);
             buttonMovementE.setCancelButton(true);
 
-            /* Update text - TODO:change video */
             textMovementET.setText(TextDescriptions.titleMov_HeadR);
             textMovementE.setText(TextDescriptions.textMov_HeadR);
             imgViewMov.setImage(new Image("/img/headRotationMov.png"));
@@ -289,7 +285,6 @@ public class ClientController implements Initializable{
             buttonBackToMVSelect.setDisable(true);
             buttonMovementE.setCancelButton(true);
 
-            /* Update text - TODO:change video */
             textMovementET.setText(TextDescriptions.titleMov_TorsoT);
             textMovementE.setText(TextDescriptions.textMov_TorsoT);
             imgViewMov.setImage(new Image("/img/torsoTiltMov.png"));
@@ -303,7 +298,6 @@ public class ClientController implements Initializable{
             buttonBackToMVSelect.setDisable(true);
             buttonMovementE.setCancelButton(true);
 
-            /* Update text - TODO:change video */
             textMovementET.setText(TextDescriptions.titleMov_TorsoR);
             textMovementE.setText(TextDescriptions.textMov_TorsoR);
             imgViewMov.setImage(new Image("/img/torsoRotMov.png"));
@@ -317,7 +311,6 @@ public class ClientController implements Initializable{
             buttonBackToMVSelect.setDisable(true);
             buttonMovementE.setCancelButton(true);
 
-            /* Update text - TODO:change video */
             textMovementET.setText(TextDescriptions.titleMov_Shoulder);
             textMovementE.setText(TextDescriptions.textMov_Shoulder);
             imgViewMov.setImage(new Image("/img/shoulderMov.png"));
@@ -331,7 +324,6 @@ public class ClientController implements Initializable{
             buttonBackToMVSelect.setDisable(true);
             buttonMovementE.setCancelButton(true);
 
-            /* Update text - TODO:change video */
             textMovementET.setText(TextDescriptions.titleMov_ArmFlex);
             textMovementE.setText(TextDescriptions.textMov_ArmFlex);
             imgViewMov.setImage(new Image("/img/armFlexMov.png"));
@@ -345,7 +337,6 @@ public class ClientController implements Initializable{
             buttonBackToMVSelect.setDisable(true);
             buttonMovementE.setCancelButton(true);
 
-            /* Update text - TODO:change video */
             textMovementET.setText(TextDescriptions.titleMov_ArmRot);
             textMovementE.setText(TextDescriptions.textMov_ArmFlex);
             imgViewMov.setImage(new Image("/img/armRotMov.png"));
@@ -359,7 +350,6 @@ public class ClientController implements Initializable{
             buttonBackToMVSelect.setDisable(true);
             buttonMovementE.setCancelButton(true);
 
-            /* Update text - TODO:change video */
             textMovementET.setText(TextDescriptions.titleMov_Forearm);
             textMovementE.setText(TextDescriptions.textMov_Forearm);
             imgViewMov.setImage(new Image("/img/forearmMov.png"));

@@ -14,7 +14,7 @@ public class MainGUI extends Application {
     public static void main(String[] args)  {
         
         try {
-            Client.startUp("192.168.137.1",57573);
+            Client.startUp("192.168.137.1",54817);
             Client.selectMCU("Maroon");
             Client.updateCurrentPositions();
 

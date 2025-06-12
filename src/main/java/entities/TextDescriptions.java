@@ -12,31 +12,38 @@ public abstract class TextDescriptions {
     public static final String titleLostConn = "Critical Error: Lost Server Connection.";
     public static final String textLostConn = "The app lost connection with the server and will now terminate. If the issue persists after restart, please check if the server is still running properly.";
     public static final String titleCautionTorso = "Warning: Caution with Torso Servo Movements.";
-    public static final String textCautionTorso = "Please, be careful when operating the torso servos as the robot is made out of frail materials, and sudden, big movements can cause torso pieces to snap or break.";
+    public static final String textCautionTorso = "Please, be careful when operating the torso servos as the robot is made out of fragile materials, and sudden, big movements can cause torso pieces to snap or break.";
     
-    public static final String titleMainGuide = "What do I have to do?";
-    public static final String textMainGuide = "In the home page, one must select the area of the robot that wishes to operate. Once selected, a new control pane will appear with all the controls for each of the joints of the area seleted.";
-    public static final String titleMovGuide = "How do I move some servo?";
-    public static final String textMovGuide = "The \"Current Position\" value of each joint indicates what's the current position of each of the robot joints. In order to generate a movement change, you should select wether you want to increment or decrease this position by selecting the + or - buttons on the right of \"Current Position\" and adding the amount you want this value to change.\nNote that the new position will be the current position with the specified value added or substracted from it.";
+    /* "GUI" guides */
 
-    public static final String titleMov_Finger = "Finger Flexion-Extension Movement";
-    public static final String textMov_Finger = "On this action, the servo movement will translate into the flexion or extension movements for each of the fingers. ";
-    public static final String titleMov_Pam = "Thumb abduction movement";
-    public static final String textMov_Pam = "During this movement, the robot will execute an approximation of the thumb adduction movement, moving the thumb closer or further away from the palm.";
+    public static final String titleMainGuide = "What Do I Have to Do?";
+    public static final String textMainGuide = "On the home page, select the part of the robot you want to control. Once selected, a control panel will appear showing all available servo controls for that area.";
+    public static final String titleMovGuide = "How Do I Move a Servo?";
+    public static final String textMovGuide = "Each joint displays its current position. To adjust it, use the + or - buttons next to the value. Enter the amount you want to add or subtract to the current value.\n Click the \"Execute Movements\" button to send the movement order to the robot.";
+
+    /* Movement guides */
+    // Hand
+    public static final String titleMov_Finger = "Finger Flexion-Extension";
+    public static final String textMov_Finger = "This movement controls the flexion and extension of each finger, simulating grasping and releasing actions.";
+    public static final String titleMov_Pam = "Thumb Abduction-Adduction";
+    public static final String textMov_Pam = "This action moves the thumb toward or away from the palm, mimicking human thumb abduction and adduction.";
+    // Head
     public static final String titleMov_HeadR = "Head Rotation";
-    public static final String textMov_HeadR = "On this movement, the robot will rotate its head, simmulating the <todo> movement of humans.";
-    public static final String titleMov_HeadT = "Head tilt movement";
-    public static final String textMov_HeadT = "Test";
-    public static final String titleMov_TorsoT = "Torso tilt movement";
-    public static final String textMov_TorsoT = "Test";
-    public static final String titleMov_TorsoR = "Shoulder rotation (Circonducction)";
-    public static final String textMov_TorsoR = "Test";
-    public static final String titleMov_Shoulder = "Shoulder-Arm flexion";
-    public static final String textMov_Shoulder = "moving the arms from i pose to T pose";
-    public static final String titleMov_ArmFlex = "Arm flexion";
-    public static final String textMov_ArmFlex = "biceps flexion";
-    public static final String titleMov_ArmRot = "Arm rotation";
-    public static final String textMov_ArmRot = "Test";
-    public static final String titleMov_Forearm = "Forearm rotation";
-    public static final String textMov_Forearm = "Test";
+    public static final String textMov_HeadR = "This movement rotates the head left and right, simulating human cervical rotation.";
+    public static final String titleMov_HeadT = "Head Tilt";
+    public static final String textMov_HeadT = "These servos tilt the head diagonally, enabling lateral flexion and forward/backward flexion movement through the combination of both of them.";
+    // Torso
+    public static final String titleMov_TorsoT = "Torso Tilt";
+    public static final String textMov_TorsoT = "Controls diagonal tilting of the torso, allowing lateral bending and forward flexion at the waist through the combination of both of them.";
+    public static final String titleMov_TorsoR = "Shoulder Circumduction";
+    public static final String textMov_TorsoR = "This movement enables circular motion of the arm at the shoulder, combining flexion, extension, abduction, and rotation.";
+    // Arm
+    public static final String titleMov_Shoulder = "Shoulder Abduction";
+    public static final String textMov_Shoulder = "Lifts the arm away from the torso along the frontal plane.";
+    public static final String titleMov_ArmFlex = "Elbow Flexion";
+    public static final String textMov_ArmFlex = "Bends the arm at the elbow, simulating a curling motion.";
+    public static final String titleMov_ArmRot = "Upper Arm Rotation";
+    public static final String textMov_ArmRot = "Rotates the upper arm along its axis, turning the arm inward or outward.";
+    public static final String titleMov_Forearm = "Forearm Rotation";
+    public static final String textMov_Forearm = "Rotates the forearm to turn the palm up (supination) or down (pronation).";
 }
